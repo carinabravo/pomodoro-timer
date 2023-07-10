@@ -1,0 +1,64 @@
+/*** Colores del sitio ***/
+
+$basePrimaria-color: #e0e5fb;
+$baseSecundaria-color: #eef1ff;
+$baseTerciaria-color: #8c80f6;
+$baseCuaternaria-color: #bd7cfe;
+$baseQuinaria-color: transparent;
+
+body {
+  background-color: $basePrimaria-color;
+}
+
+.circle {
+  box-shadow: 0px 0px 30px $baseTerciaria-color;
+}
+
+.circle::before {
+  background-color: $baseSecundaria-color;
+}
+
+.controls button {
+  background-color: $baseQuinaria-color;
+}
+
+.fa-play,
+.fa-spin,
+.scroll a {
+  color: $baseTerciaria-color;
+}
+
+#taskInput {
+  border-color: $baseTerciaria-color;
+  background-color: $baseQuinaria-color;
+}
+
+#taskInput:focus {
+  border: 2px solid $baseCuaternaria-color;
+  box-shadow: 0px 2px 9px $baseTerciaria-color;
+  background-color: $baseSecundaria-color;
+}
+
+#text1 {
+  color: $baseSecundaria-color;
+  background-color: $baseSecundaria-color;
+  border: $baseQuinaria-color;
+}
+
+#eliminar {
+  color: $baseSecundaria-color;
+  background-color: $baseCuaternaria-color;
+  border: $baseQuinaria-color;
+}
+
+.button:hover {
+  box-shadow: 0px 2px 9px $baseTerciaria-color;
+}
+
+.footer {
+  background-color: $baseTerciaria-color;
+}
+
+.text2 {
+  color: $baseSecundaria-color;
+}

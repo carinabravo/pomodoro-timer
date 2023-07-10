@@ -1,0 +1,96 @@
+/*** Estructura del sitio ***/
+
+$alignItem-primario: center;
+$backgroundPosition-primario: center;
+$display-primario: flex;
+$display-secundario: none;
+$flexDirection-primario: row;
+$flexDirection-secundario: column;
+$justifyContent-primario: center;
+$listStyleType-primario: none;
+$textAlign-primario: center;
+$textAlign-secundario: justify;
+
+body {
+  background-position: $backgroundPosition-primario;
+}
+
+section {
+  display: $display-primario;
+  align-items: $alignItem-primario;
+}
+
+.container {
+  overflow: hidden;
+  display: $display-primario;
+  justify-content: $justifyContent-primario;
+  align-items: $alignItem-primario;
+  flex-direction: $flexDirection-primario;
+}
+
+.circle {
+  display: $display-primario;
+  flex-direction: $flexDirection-secundario;
+  justify-content: $justifyContent-primario;
+  align-items: $alignItem-primario;
+  position: relative;
+}
+
+.circle::before {
+  content: "";
+  position: absolute;
+}
+
+.time {
+  display: $display-primario;
+  position: relative;
+  flex-direction: $flexDirection-primario;
+}
+
+#text {
+  display: $display-primario;
+  flex-direction: $flexDirection-secundario;
+  justify-content: $justifyContent-primario;
+  align-items: $alignItem-primario;
+}
+
+.controls button {
+  border: none;
+  cursor: pointer;
+}
+
+.controls #reset {
+  display: $display-secundario;
+}
+
+iframe {
+  display: $display-secundario;
+}
+
+.tasks1,
+.tasks2 {
+  flex-direction: $flexDirection-primario;
+  justify-content: $justifyContent-primario;
+  align-items: $alignItem-primario;
+}
+
+#taskInput:focus {
+  outline: none;
+}
+
+ul {
+  list-style-type: $listStyleType-primario;
+  text-align: $textAlign-secundario;
+}
+
+.button {
+  cursor: pointer;
+}
+
+.text2 {
+  text-align: $alignItem-primario;
+}
+
+.float {
+  position: fixed;
+}

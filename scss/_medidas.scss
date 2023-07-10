@@ -1,0 +1,140 @@
+/*** Medidas del sitio ***/
+
+.container {
+  width: 100%;
+  padding: 0 10px 0 10px;
+}
+
+.title {
+  padding: 40px 0 35px 0;
+}
+
+.fas {
+  padding-left: 13px;
+
+  @media screen and (max-width: 768px) {
+    padding-left: 15px;
+  }
+  @media screen and (max-width: 400px) {
+    padding-left: 15px;
+  }
+}
+
+.circle {
+  width: 370px;
+  height: 370px;
+  border-radius: 50%;
+  @media screen and (max-width: 768px) {
+    width: 310px;
+    height: 310px;
+  }
+  @media screen and (max-width: 400px) {
+    width: 270px;
+    height: 270px;
+  }
+}
+
+.circle::before {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+}
+
+.time {
+  font-size: 75px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 65px;
+  }
+  @media screen and (max-width: 400px) {
+    font-size: 60px;
+  }
+}
+
+#text {
+  padding-top: 35px;
+  padding-bottom: 30px;
+}
+
+.controls {
+  padding-bottom: 35px;
+}
+
+.fa-play {
+  line-height: 1;
+}
+
+.fa-spin {
+  line-height: 1;
+}
+
+.tasks1 {
+  padding-top: 20px;
+}
+
+#taskInput {
+  padding: 7px 20px;
+  width: 389px;
+  height: auto;
+  border-radius: 15px;
+  border-width: 2px;
+  @media screen and (max-width: 768px) {
+    width: 279px;
+  }
+  @media screen and (max-width: 400px) {
+    padding: 7px 10px;
+    width: 220px;
+  }
+}
+
+#text1 {
+  width: auto;
+  height: auto;
+  border-radius: 15px;
+  padding: 8px 20px;
+  margin-left: 5px;
+  @media screen and (max-width: 400px) {
+    padding: 8px 15px;
+  }
+}
+
+.title2 {
+  padding-top: 45px;
+  @media screen and (max-width: 768px) {
+    padding-top: 40px;
+  }
+  @media screen and (max-width: 400px) {
+    padding-top: 40px;
+  }
+}
+
+ul {
+  width: 515px;
+  padding: 10px 5px 30px 5px;
+  @media screen and (max-width: 768px) {
+    width: 400px;
+  }
+  @media screen and (max-width: 400px) {
+    width: 329px;
+  }
+}
+
+#eliminar {
+  width: auto;
+  height: auto;
+  border-radius: 15px;
+  padding: 5px 15px;
+  margin: 10px 12px 10px 0;
+}
+
+.footer {
+  padding: 20px 0;
+  @media screen and (max-width: 400px) {
+    padding: 15px 0;
+  }
+}
+
+.float {
+  right: 20px;
+  bottom: 85px;
+}

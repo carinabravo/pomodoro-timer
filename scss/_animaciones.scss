@@ -1,0 +1,31 @@
+/*** Animaciones del sitio ***/
+
+.circle {
+  background: linear-gradient(
+    50deg,
+    #7c6ef6 25%,
+    #3dc1f6 38%,
+    #ae4efd 45%,
+    #3dc1f6 57%,
+    #7c6ef6 75%,
+    #ae4efd 100%
+  );
+  background-size: 400% 400%;
+  animation: animate 5s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.fa-spin {
+  transition: calc(30s);
+}
