@@ -47,7 +47,7 @@ body {
   }
 }
 
-#text {
+.text {
   font-family: "Kalam", cursive;
   font-size: 25px;
   @media screen and (max-width: 768px) {
@@ -68,7 +68,7 @@ body {
   }
 }
 
-#taskInput {
+.taskInput {
   font-family: "Kalam", cursive;
   font-size: 17px;
   @media screen and (max-width: 768px) {
@@ -79,7 +79,7 @@ body {
   }
 }
 
-#text1 {
+.text1 {
   font-family: "Kalam", cursive;
   font-size: 18px;
   @media screen and (max-width: 768px) {
@@ -101,7 +101,6 @@ body {
   }
 }
 
-
 li {
   font-family: "Kalam", cursive;
   font-size: 17px;
@@ -113,7 +112,7 @@ li {
   }
 }
 
-#eliminar {
+.eliminar {
   font-family: "Kalam", cursive;
   font-size: 18px;
   @media screen and (max-width: 768px) {
