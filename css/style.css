@@ -1,19 +1,537 @@
-/* Error: Undefined variable.
- *    ,
- * 39 |   position: $position-secundaria;
- *    |             ^^^^^^^^^^^^^^^^^^^^
- *    '
- *   scss\_estructura.scss 39:13  @import
- *   scss\_estilos.scss 2:9       @import
- *   scss\style.scss 1:9          root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a    \2577 \a 39 \2502    position: $position-secundaria;\d\a    \2502              ^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   scss\\_estructura.scss 39:13  @import\a   scss\\_estilos.scss 2:9       @import\a   scss\\style.scss 1:9          root stylesheet";
+/*** Base del sitio ***/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+html {
+  height: 100%;
+}
+
+body {
+  height: auto;
+  width: auto;
+}
+
+/*** Estructura del sitio ***/
+body {
+  background-position: center;
+}
+
+section {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.circle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.circle::before {
+  content: "";
+  position: absolute;
+}
+
+.time {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+}
+
+#text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.controls button {
+  border: none;
+  cursor: pointer;
+}
+
+.controls #reset {
+  display: none;
+}
+
+iframe {
+  display: none;
+}
+
+.tasks1,
+.tasks2 {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#taskInput:focus {
+  outline: none;
+}
+
+ul {
+  list-style-type: none;
+  text-align: justify;
+}
+
+.button {
+  cursor: pointer;
+}
+
+.text2 {
+  text-align: center;
+}
+
+.float {
+  position: fixed;
+}
+
+/*** Medidas del sitio ***/
+.container {
+  width: 100%;
+  padding: 0 10px 0 10px;
+}
+
+.title {
+  padding: 40px 0 35px 0;
+}
+
+.fas {
+  padding-left: 13px;
+}
+@media screen and (max-width: 768px) {
+  .fas {
+    padding-left: 15px;
+  }
+}
+
+.circle {
+  width: 370px;
+  height: 370px;
+  border-radius: 50%;
+}
+@media screen and (max-width: 768px) {
+  .circle {
+    width: 310px;
+    height: 310px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .circle {
+    width: 270px;
+    height: 270px;
+  }
+}
+
+.circle::before {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+}
+
+.time {
+  font-size: 75px;
+}
+@media screen and (max-width: 768px) {
+  .time {
+    font-size: 65px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .time {
+    font-size: 60px;
+  }
+}
+
+#text {
+  padding-top: 35px;
+  padding-bottom: 30px;
+}
+
+.controls {
+  padding-bottom: 35px;
+}
+
+.fa-play {
+  line-height: 1;
+}
+
+.fa-spin {
+  line-height: 1;
+}
+
+.tasks1 {
+  padding-top: 20px;
+}
+
+#taskInput {
+  padding: 7px 20px;
+  width: 389px;
+  height: auto;
+  border-radius: 15px;
+  border-width: 2px;
+}
+@media screen and (max-width: 768px) {
+  #taskInput {
+    width: 279px;
+  }
+}
+@media screen and (max-width: 400px) {
+  #taskInput {
+    padding: 7px 10px;
+    width: 220px;
+  }
+}
+
+#text1 {
+  width: auto;
+  height: auto;
+  border-radius: 15px;
+  padding: 8px 20px;
+  margin-left: 5px;
+}
+@media screen and (max-width: 400px) {
+  #text1 {
+    padding: 8px 15px;
+  }
+}
+
+.title2 {
+  padding-top: 45px;
+}
+@media screen and (max-width: 768px) {
+  .title2 {
+    padding-top: 40px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .title2 {
+    padding-top: 40px;
+  }
+}
+
+ul {
+  width: 515px;
+  padding: 10px 5px 30px 5px;
+}
+@media screen and (max-width: 768px) {
+  ul {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 400px) {
+  ul {
+    width: 329px;
+  }
+}
+
+#eliminar {
+  width: auto;
+  height: auto;
+  border-radius: 15px;
+  padding: 5px 15px;
+  margin: 10px 12px 10px 0;
+}
+
+.footer {
+  padding: 20px 0;
+}
+@media screen and (max-width: 400px) {
+  .footer {
+    padding: 15px 0;
+  }
+}
+
+.float {
+  right: 20px;
+  bottom: 85px;
+}
+
+/*** Fuentes del sitio ***/
+.texto-mayor {
+  font-weight: 600;
+}
+
+.texto-medio {
+  font-weight: normal;
+}
+
+.texto-menor {
+  font-weight: lighter;
+}
+
+body {
+  font-family: "Varela Round", sans-serif;
+}
+
+.title {
+  font-size: 47px;
+}
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .title {
+    font-size: 35px;
+  }
+}
+
+.fas {
+  font-size: 45px;
+}
+@media screen and (max-width: 768px) {
+  .fas {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .fas {
+    font-size: 35px;
+  }
+}
+
+.time {
+  font-family: "Varela Round", sans-serif;
+  font-size: 75px;
+}
+@media screen and (max-width: 768px) {
+  .time {
+    font-size: 65px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .time {
+    font-size: 60px;
+  }
+}
+
+#text {
+  font-family: "Kalam", cursive;
+  font-size: 25px;
+}
+@media screen and (max-width: 768px) {
+  #text {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 400px) {
+  #text {
+    font-size: 20px;
+  }
+}
+
+.fa-solid {
+  font-size: 48px;
+}
+@media screen and (max-width: 768px) {
+  .fa-solid {
+    font-size: 43px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .fa-solid {
+    font-size: 40px;
+  }
+}
+
+#taskInput {
+  font-family: "Kalam", cursive;
+  font-size: 17px;
+}
+@media screen and (max-width: 768px) {
+  #taskInput {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 400px) {
+  #taskInput {
+    font-size: 16px;
+  }
+}
+
+#text1 {
+  font-family: "Kalam", cursive;
+  font-size: 18px;
+}
+@media screen and (max-width: 768px) {
+  #text1 {
+    font-size: 17px;
+  }
+}
+@media screen and (max-width: 400px) {
+  #text1 {
+    font-size: 16px;
+  }
+}
+
+.title2 {
+  font-family: "Varela Round", sans-serif;
+  font-size: 23px;
+}
+@media screen and (max-width: 768px) {
+  .title2 {
+    font-size: 21px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .title2 {
+    font-size: 19px;
+  }
+}
+
+li {
+  font-family: "Kalam", cursive;
+  font-size: 17px;
+}
+@media screen and (max-width: 768px) {
+  li {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 400px) {
+  li {
+    font-size: 15px;
+  }
+}
+
+#eliminar {
+  font-family: "Kalam", cursive;
+  font-size: 18px;
+}
+@media screen and (max-width: 768px) {
+  #eliminar {
+    font-size: 17px;
+  }
+}
+@media screen and (max-width: 400px) {
+  #eliminar {
+    font-size: 16px;
+  }
+}
+
+.text2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+}
+@media screen and (max-width: 768px) {
+  .text2 {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .text2 {
+    font-size: 9px;
+  }
+}
+
+.scroll a {
+  font-size: 45px;
+}
+@media screen and (max-width: 768px) {
+  .scroll a {
+    display: none;
+  }
+}
+
+/*** Colores del sitio ***/
+body {
+  background-color: #e0e5fb;
+}
+
+.fa-book-reader {
+  color: #8c80f6;
+}
+
+.circle {
+  box-shadow: 0px 0px 30px #8c80f6;
+}
+
+.circle::before {
+  background-color: #eef1ff;
+}
+
+.controls button {
+  background-color: transparent;
+}
+
+.fa-play,
+.scroll a {
+  color: #8c80f6;
+}
+
+.fa-spin {
+  color: #bd7cfe;
+}
+
+#taskInput {
+  border-color: #8c80f6;
+  background-color: transparent;
+}
+
+#taskInput:focus {
+  border: 2px solid #bd7cfe;
+  box-shadow: 0px 2px 9px #8c80f6;
+  background-color: #eef1ff;
+}
+
+#text1 {
+  color: #eef1ff;
+  background-color: #bd7cfe;
+  border: transparent;
+}
+
+#eliminar {
+  color: #eef1ff;
+  background-color: #bd7cfe;
+  border: transparent;
+}
+
+.button:hover {
+  box-shadow: 0px 2px 9px #8c80f6;
+}
+
+.footer {
+  background-color: #8c80f6;
+}
+
+.text2 {
+  color: #eef1ff;
+}
+
+/*** Animaciones del sitio ***/
+.circle {
+  background: linear-gradient(50deg, #7c6ef6 25%, #3dc1f6 38%, #ae4efd 45%, #3dc1f6 57%, #7c6ef6 75%, #ae4efd 100%);
+  background-size: 400% 400%;
+  animation: animate 5s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+.fa-spin {
+  transition: 30s;
+}
+
+/*# sourceMappingURL=style.css.map */

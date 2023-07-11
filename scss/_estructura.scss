@@ -1,18 +1,16 @@
 /*** Estructura del sitio ***/
 
 $alignItem-primario: center;
-$backgroundPosition-primario: center;
 $display-primario: flex;
 $display-secundario: none;
 $flexDirection-primario: row;
 $flexDirection-secundario: column;
 $justifyContent-primario: center;
-$listStyleType-primario: none;
 $textAlign-primario: center;
 $textAlign-secundario: justify;
 
 body {
-  background-position: $backgroundPosition-primario;
+  background-position: center;
 }
 
 section {
@@ -21,11 +19,10 @@ section {
 }
 
 .container {
-  overflow: hidden;
   display: $display-primario;
   justify-content: $justifyContent-primario;
   align-items: $alignItem-primario;
-  flex-direction: $flexDirection-primario;
+  flex-direction: $flexDirection-secundario;
 }
 
 .circle {
@@ -79,7 +76,7 @@ iframe {
 }
 
 ul {
-  list-style-type: $listStyleType-primario;
+  list-style-type: none;
   text-align: $textAlign-secundario;
 }
 

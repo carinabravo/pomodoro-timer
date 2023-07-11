@@ -47,7 +47,7 @@ body {
   }
 }
 
-.text {
+#text {
   font-family: "Kalam", cursive;
   font-size: 25px;
   @media screen and (max-width: 768px) {
@@ -101,16 +101,6 @@ body {
   }
 }
 
-.title2 {
-  font-family: "Varela Round", sans-serif;
-  font-size: 23px;
-  @media screen and (max-width: 768px) {
-    font-size: 21px;
-  }
-  @media screen and (max-width: 400px) {
-    font-size: 19px;
-  }
-}
 
 li {
   font-family: "Kalam", cursive;
@@ -147,4 +137,7 @@ li {
 
 .scroll a {
   font-size: 45px;
+  @media screen and (max-width: 768px) {
+    display: $display-secundario;
+  }
 }
