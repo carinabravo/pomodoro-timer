@@ -104,7 +104,7 @@ function renderTaskList() {
 
   taskList.forEach((task, index) => {
     const listItem = document.createElement("li");
-    listItem.innerHTML = `<button id="eliminar" class="button texto-medio" onclick="deleteTask(${index})">Delete task</button>${task}`;
+    listItem.innerHTML = `<button class="eliminar" id="eliminar" class="button texto-medio" onclick="deleteTask(${index})">Delete task</button>${task}`;
     taskListElement.appendChild(listItem);
   });
 }
