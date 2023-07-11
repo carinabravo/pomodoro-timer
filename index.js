@@ -45,8 +45,7 @@ function start() {
         if (breakCount % 2 === 0) {
           // Detiene el temporizador al finalizar el break
           clearInterval(timerInterval);
-          document.getElementById("text").textContent =
-            "¡End break!";
+          document.getElementById("text").textContent = "¡End break!";
           setTimeout(() => {
             document.getElementById("text").textContent = ""; // Elimina el contenido de "text" después de 2 segundos
           }, 2000);
