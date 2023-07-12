@@ -5,24 +5,14 @@
   box-sizing: border-box;
 }
 
-html {
-  height: 100%;
-}
-
 body {
-  height: auto;
-  width: auto;
-  margin: auto;
+  min-height: 100vh;
+  margin: 0 auto;
 }
 
 /*** Estructura del sitio ***/
 body {
   background-position: center;
-}
-
-section {
-  display: flex;
-  align-items: center;
 }
 
 .container {
@@ -106,22 +96,13 @@ ul {
 }
 
 /*** Medidas del sitio ***/
-@media screen and (max-width: 768px) {
-  body {
-    min-height: 100%;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-  }
-}
-
 .container {
+  min-height: 100vh;
   width: 100%;
-  min-height: 100%;
-  margin: auto;
 }
 
 .title {
-  padding: 40px 0 35px 0;
+  padding: 30px 0 35px 0;
 }
 
 .fas {
@@ -201,7 +182,7 @@ ul {
 }
 @media screen and (max-width: 768px) {
   .taskInput {
-    width: 279px;
+    width: 260px;
   }
 }
 @media screen and (max-width: 400px) {
@@ -225,26 +206,22 @@ ul {
 }
 
 .title2 {
-  padding-top: 45px;
+  padding: 35px 0 5px 5px;
 }
 @media screen and (max-width: 768px) {
   .title2 {
-    padding-top: 40px;
-  }
-}
-@media screen and (max-width: 400px) {
-  .title2 {
-    padding-top: 40px;
+    padding: 35px 0 5px 15px;
   }
 }
 
 ul {
   width: 515px;
-  padding: 10px 5px 30px 5px;
+  padding: 10px 7px 20px 7px;
 }
 @media screen and (max-width: 768px) {
   ul {
     width: 400px;
+    padding: 10px 5px 20px 0;
   }
 }
 @media screen and (max-width: 400px) {
@@ -253,21 +230,37 @@ ul {
   }
 }
 
+li {
+  padding: 5px 0;
+}
+@media screen and (max-width: 768px) {
+  li {
+    padding: 5px 16px;
+  }
+}
+
 .eliminar {
   width: auto;
   height: auto;
   border-radius: 15px;
-  padding: 5px 15px;
-  margin: 10px 12px 10px 0;
+  padding: 8px 16px;
+  margin: 5px 12px 10px 0;
 }
 
 .footer {
+  height: auto;
   padding: 20px 0;
 }
 
 .float {
   right: 20px;
   bottom: 85px;
+}
+@media screen and (max-width: 768px) {
+  .float {
+    bottom: 0;
+    right: 0;
+  }
 }
 
 /*** Fuentes del sitio ***/
@@ -290,148 +283,48 @@ body {
 .title {
   font-size: 47px;
 }
-@media screen and (max-width: 768px) {
-  .title {
-    font-size: 40px;
-  }
-}
-@media screen and (max-width: 400px) {
-  .title {
-    font-size: 35px;
-  }
-}
 
 .fas {
   font-size: 45px;
-}
-@media screen and (max-width: 768px) {
-  .fas {
-    font-size: 40px;
-  }
-}
-@media screen and (max-width: 400px) {
-  .fas {
-    font-size: 35px;
-  }
 }
 
 .time {
   font-family: "Varela Round", sans-serif;
   font-size: 75px;
 }
-@media screen and (max-width: 768px) {
-  .time {
-    font-size: 65px;
-  }
-}
-@media screen and (max-width: 400px) {
-  .time {
-    font-size: 60px;
-  }
-}
 
 .text {
   font-family: "Kalam", cursive;
   font-size: 25px;
 }
-@media screen and (max-width: 768px) {
-  .text {
-    font-size: 22px;
-  }
-}
-@media screen and (max-width: 400px) {
-  .text {
-    font-size: 20px;
-  }
-}
 
 .fa-solid {
   font-size: 48px;
 }
-@media screen and (max-width: 768px) {
-  .fa-solid {
-    font-size: 43px;
-  }
-}
-@media screen and (max-width: 400px) {
-  .fa-solid {
-    font-size: 40px;
-  }
-}
 
 .taskInput {
   font-family: "Kalam", cursive;
-  font-size: 17px;
-}
-@media screen and (max-width: 768px) {
-  .taskInput {
-    font-size: 16px;
-  }
-}
-@media screen and (max-width: 400px) {
-  .taskInput {
-    font-size: 16px;
-  }
+  font-size: 18px;
 }
 
 .text1 {
   font-family: "Kalam", cursive;
-  font-size: 18px;
-}
-@media screen and (max-width: 768px) {
-  .text1 {
-    font-size: 17px;
-  }
-}
-@media screen and (max-width: 400px) {
-  .text1 {
-    font-size: 16px;
-  }
+  font-size: 19px;
 }
 
 .title2 {
   font-family: "Varela Round", sans-serif;
   font-size: 23px;
 }
-@media screen and (max-width: 768px) {
-  .title2 {
-    font-size: 21px;
-  }
-}
-@media screen and (max-width: 400px) {
-  .title2 {
-    font-size: 19px;
-  }
-}
 
 li {
   font-family: "Kalam", cursive;
   font-size: 17px;
 }
-@media screen and (max-width: 768px) {
-  li {
-    font-size: 16px;
-  }
-}
-@media screen and (max-width: 400px) {
-  li {
-    font-size: 15px;
-  }
-}
 
 .eliminar {
   font-family: "Kalam", cursive;
-  font-size: 18px;
-}
-@media screen and (max-width: 768px) {
-  .eliminar {
-    font-size: 17px;
-  }
-}
-@media screen and (max-width: 400px) {
-  .eliminar {
-    font-size: 16px;
-  }
+  font-size: 19px;
 }
 
 .text2 {
@@ -440,12 +333,12 @@ li {
 }
 @media screen and (max-width: 768px) {
   .text2 {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 @media screen and (max-width: 400px) {
   .text2 {
-    font-size: 9px;
+    font-size: 10px;
   }
 }
 

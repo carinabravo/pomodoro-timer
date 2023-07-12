@@ -18,119 +18,59 @@ body {
 
 .title {
   font-size: 47px;
-  @media screen and (max-width: 768px) {
-    font-size: 40px;
-  }
-  @media screen and (max-width: 400px) {
-    font-size: 35px;
-  }
 }
 
 .fas {
   font-size: 45px;
-  @media screen and (max-width: 768px) {
-    font-size: 40px;
-  }
-  @media screen and (max-width: 400px) {
-    font-size: 35px;
-  }
 }
 
 .time {
   font-family: "Varela Round", sans-serif;
   font-size: 75px;
-  @media screen and (max-width: 768px) {
-    font-size: 65px;
-  }
-  @media screen and (max-width: 400px) {
-    font-size: 60px;
-  }
 }
 
 .text {
   font-family: "Kalam", cursive;
   font-size: 25px;
-  @media screen and (max-width: 768px) {
-    font-size: 22px;
-  }
-  @media screen and (max-width: 400px) {
-    font-size: 20px;
-  }
 }
 
 .fa-solid {
   font-size: 48px;
-  @media screen and (max-width: 768px) {
-    font-size: 43px;
-  }
-  @media screen and (max-width: 400px) {
-    font-size: 40px;
-  }
 }
 
 .taskInput {
   font-family: "Kalam", cursive;
-  font-size: 17px;
-  @media screen and (max-width: 768px) {
-    font-size: 16px;
-  }
-  @media screen and (max-width: 400px) {
-    font-size: 16px;
-  }
+  font-size: 18px;
 }
 
 .text1 {
   font-family: "Kalam", cursive;
-  font-size: 18px;
-  @media screen and (max-width: 768px) {
-    font-size: 17px;
-  }
-  @media screen and (max-width: 400px) {
-    font-size: 16px;
-  }
+  font-size: 19px;
 }
 
 .title2 {
   font-family: "Varela Round", sans-serif;
   font-size: 23px;
-  @media screen and (max-width: 768px) {
-    font-size: 21px;
-  }
-  @media screen and (max-width: 400px) {
-    font-size: 19px;
-  }
 }
 
 li {
   font-family: "Kalam", cursive;
   font-size: 17px;
-  @media screen and (max-width: 768px) {
-    font-size: 16px;
-  }
-  @media screen and (max-width: 400px) {
-    font-size: 15px;
-  }
 }
 
 .eliminar {
   font-family: "Kalam", cursive;
-  font-size: 18px;
-  @media screen and (max-width: 768px) {
-    font-size: 17px;
-  }
-  @media screen and (max-width: 400px) {
-    font-size: 16px;
-  }
+  font-size: 19px;
 }
 
 .text2 {
   font-family: "Roboto", sans-serif;
   font-size: 11px;
   @media screen and (max-width: 768px) {
-    font-size: 10px;
+    font-size: 12px;
   }
   @media screen and (max-width: 400px) {
-    font-size: 9px;
+    font-size: 10px;
   }
 }
 

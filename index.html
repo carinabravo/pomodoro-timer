@@ -1,40 +1,60 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+  <head>
+    <!-- Meta / Keywords -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="método de gestión de tiempo que sugiere trabajar en intervalos de 25 minutos, sin interrupción ni distracciones, y añadir tiempos de descanso de 5 minutos."
+    />
+    <meta
+      name="keywords"
+      content="pomodoro, técnica pomodoro, tecnica de estudio."
+    />
+    <title>Pomodoro timer</title>
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="imagenes/book-open-reader-solid.svg"
+      type="image/x-icon"
+    />
+    <!-- Icons -->
+    <script
+      src="https://kit.fontawesome.com/6f3103b13c.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-  <!-- Meta / Keywords -->
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="método de gestión de tiempo que sugiere trabajar en intervalos de 25 minutos, sin interrupción ni distracciones, y añadir tiempos de descanso de 5 minutos." />
-  <meta name="keywords" content="pomodoro, técnica pomodoro, tecnica de estudio." />
-  <title>Pomodoro timer</title>
-  <!-- favicon -->
-  <link rel="shortcut icon" href="imagenes/book-open-reader-solid.svg" type="image/x-icon" />
-  <!-- Icons -->
-  <script src="https://kit.fontawesome.com/6f3103b13c.js" crossorigin="anonymous"></script>
-  <!-- Google fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+    <!--Style css -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
 
-  <!--Style css -->
-  <link rel="stylesheet" href="./css/style.css" />
-</head> 
-
-<body>
-  <!--Sección 1 -->
-  <section>
-    <div class="container">
+  <body>
+    <!--Sección 1 -->
+    <section class="container">
       <!--Título-->
-      <h1 class="title texto-medio">POMODORO<i class="fas fa-book-reader"></i></h1>
+      <h1 class="title texto-medio">
+        POMODORO<i class="fas fa-book-reader"></i>
+      </h1>
       <!--Cronómetro-->
       <div class="cronómetro">
         <div class="circle">
@@ -51,47 +71,53 @@
         <button id="start" onclick="start()">
           <i onclick="sonar()" class="fa-solid fa-play"></i>
         </button>
-        <a id="reset" href="#" onclick="resetTimer()"><i onclick="callar()"
-            class="fa-solid fa-arrows-rotate fa-spin"></i></a>
-        <iframe src="./sound/musica-para-pensar-musica-relajante-para-estudiar-musica-para-reflexionar-pe_LXQLr7OQ.mp3"
-          controls muted>
+        <a id="reset" href="#" onclick="resetTimer()"
+          ><i onclick="callar()" class="fa-solid fa-arrows-rotate fa-spin"></i
+        ></a>
+        <iframe
+          src="./sound/musica-para-pensar-musica-relajante-para-estudiar-musica-para-reflexionar-pe_LXQLr7OQ.mp3"
+          controls
+        >
         </iframe>
       </div>
 
       <!--Tareas / lista / botones-->
       <div class="tasks1">
-        <input type="text" class="taskInput" id="taskInput" placeholder="Enter task..." />
+        <input
+          type="text"
+          class="taskInput"
+          id="taskInput"
+          placeholder="Enter task..."
+        />
         <button class="button texto-medio text1" id="text1" onclick="addTask()">
           Add task
         </button>
-        <h2 class="title2 texto-mayor">MY TASKS:</h2>
       </div>
       <div class="tasks2 texto-medio">
+        <h2 class="title2 texto-mayor">MY TASKS:</h2>
         <ul id="taskList"></ul>
       </div>
-    </div>
-    <!--Sección 1 -->
-  </section>
+      <!--Sección 1 -->
+    </section>
 
-  <!--Sección 2 -->
-  <section class="scroll">
-    <!--Scroll-->
-    <div class="scroll float">
-      <a href="#"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
-    </div>
-    <!--Fin de sección 2-->
-  </section>
+    <!--Sección 2 -->
+    <section class="scroll">
+      <!--Scroll-->
+      <div class="scroll float">
+        <a href="#"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+      </div>
+      <!--Fin de sección 2-->
+    </section>
 
-  <!--Sección 3 -->
-  <footer class="footer">
-    <!--footer-->
-    <div class="text2 texto-menor">
-      <h3 class="derechos">© 2023 By Carina Bravo - All rights reserved.</h3>
-    </div>
-    <!--Fin de sección 3-->
-  </footer>
-  <!-- SCRIPT -->
-  <script src="./index.js"></script>
-</body>
-
+    <!--Sección 3 -->
+    <footer class="footer">
+      <!--footer-->
+      <div class="text2 texto-menor">
+        <h3>© 2023 By Carina Bravo - All rights reserved.</h3>
+      </div>
+      <!--Fin de sección 3-->
+    </footer>
+    <!-- SCRIPT -->
+    <script src="./index.js"></script>
+  </body>
 </html>

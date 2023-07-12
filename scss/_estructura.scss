@@ -13,16 +13,12 @@ body {
   background-position: center;
 }
 
-section {
-  display: $display-primario;
-  align-items: $alignItem-primario;
-}
-
 .container {
   display: $display-primario;
   justify-content: $justifyContent-primario;
   align-items: $alignItem-primario;
   flex-direction: $flexDirection-secundario;
+
 }
 
 .circle {
@@ -88,13 +84,12 @@ ul {
   text-align: $alignItem-primario;
 }
 
-.scroll a {
+.scroll a{
   @media screen and (max-width: 768px) {
-    display: $display-secundario;
+   display: none;
   }
 }
 
 .float {
   position: fixed;
-
 }
