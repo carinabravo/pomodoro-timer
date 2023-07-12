@@ -1,12 +1,11 @@
 /*** Medidas del sitio ***/
 
 body {
-  @media (max-width: 768px) {
     min-height: 100%;
     display: grid;
     grid-template-rows: auto 1fr auto;
   }
-}
+
 
 .container {
   width: 100%;
