@@ -106,7 +106,7 @@ ul {
 }
 
 /*** Medidas del sitio ***/
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   body {
     min-height: 100%;
     display: grid;
@@ -117,7 +117,7 @@ ul {
 .container {
   width: 100%;
   min-height: 100%;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .title {
