@@ -17,25 +17,43 @@ body {
 }
 
 .title {
-  font-size: 47px;
+  font-size: 50px;
+  @media screen and (max-width: 768px) {
+    font-size: 47px;
+  }
+  @media screen and (max-width: 400px) {
+    font-size: 40px;
+  }
 }
 
 .fas {
-  font-size: 45px;
+  font-size: 50px;
+  @media screen and (max-width: 768px) {
+    font-size: 47px;
+  }
+  @media screen and (max-width: 400px) {
+    font-size: 40px;
+  }
 }
 
 .time {
   font-family: "Varela Round", sans-serif;
-  font-size: 75px;
+  font-size: 85px;
+  @media screen and (max-width: 768px) {
+    font-size: 80px;
+  }
+  @media screen and (max-width: 400px) {
+    font-size: 75px;
+  }
 }
 
 .text {
   font-family: "Kalam", cursive;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .fa-solid {
-  font-size: 48px;
+  font-size: 55px;
 }
 
 .taskInput {
@@ -45,22 +63,22 @@ body {
 
 .text1 {
   font-family: "Kalam", cursive;
-  font-size: 19px;
+  font-size: 20px;
 }
 
 .title2 {
   font-family: "Varela Round", sans-serif;
-  font-size: 23px;
+  font-size: 26px;
 }
 
 li {
   font-family: "Kalam", cursive;
-  font-size: 17px;
+  font-size: 18px;
 }
 
 .eliminar {
   font-family: "Kalam", cursive;
-  font-size: 19px;
+  font-size: 20px;
 }
 
 .text2 {
@@ -75,5 +93,5 @@ li {
 }
 
 .scroll a {
-  font-size: 45px;
+  font-size: 50px;
 }

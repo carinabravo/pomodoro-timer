@@ -18,7 +18,10 @@ body {
   justify-content: $justifyContent-primario;
   align-items: $alignItem-primario;
   flex-direction: $flexDirection-secundario;
+}
 
+.title {
+  text-align: $alignItem-primario;
 }
 
 .circle {
@@ -84,9 +87,9 @@ ul {
   text-align: $alignItem-primario;
 }
 
-.scroll a{
+.scroll a {
   @media screen and (max-width: 768px) {
-   display: none;
+    display: none;
   }
 }
 
