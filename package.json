@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-sass": "sass --watch scss:css"
+    "build-sass": "sass --watch scss:css",
+    "localtunnel": "npx localtunnel -p 5500 -s pomodoro"
   },
   "author": "",
   "license": "ISC",
