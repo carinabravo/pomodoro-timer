@@ -19,7 +19,7 @@ body {
 .title {
   font-size: 47px;
   @media screen and (max-width: 768px) {
-    font-size: 47px;
+    font-size: 45px;
   }
   @media screen and (max-width: 480px) {
     font-size: 40px;
@@ -34,6 +34,17 @@ body {
   }
   @media screen and (max-width: 480px) {
     font-size: 75px;
+  }
+}
+
+.menssage {
+  font-family: "Kalam", cursive;
+  font-size: 25px;
+  @media screen and (max-width: 768px) {
+    font-size: 25px;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 22px;
   }
 }
 
@@ -53,7 +64,7 @@ body {
 
 .taskInput {
   font-family: "Kalam", cursive;
-  font-size: 18px;
+  font-size: 19px;
 }
 
 .text1 {
@@ -68,7 +79,7 @@ body {
 
 li {
   font-family: "Kalam", cursive;
-  font-size: 18px;
+  font-size: 19px;
 }
 
 .eliminar {

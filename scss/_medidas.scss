@@ -14,19 +14,22 @@
   @media screen and (max-width: 768px) {
     padding-left: 15px;
   }
+  @media screen and (max-width: 480px) {
+    padding-left: 10px;
+  }
 }
 
 .circle {
-  width: 380px;
-  height: 380px;
+  width: 370px;
+  height: 370px;
   border-radius: 50%;
   @media screen and (max-width: 768px) {
     width: 340px;
     height: 340px;
   }
   @media screen and (max-width: 480px) {
-    width: 280px;
-    height: 280px;
+    width: 300px;
+    height: 300px;
   }
 }
 
@@ -36,8 +39,11 @@
   border-radius: 50%;
 }
 
+.menssage{
+  padding: 35px 0 0 0;
+}
 .controls {
-  padding: 50px 0 40px 0;
+  padding: 30px 0 40px 0;
 }
 
 .button-work,
@@ -54,7 +60,7 @@
   @media screen and (max-width: 768px) {
     width: 380px;
     margin: 0;
-    margin-bottom: 15px;
+    margin-bottom: 17px;
   }
   @media screen and (max-width: 480px) {
     width: 320px;
@@ -73,12 +79,12 @@
   border-width: 2px;
   @media screen and (max-width: 768px) {
     width: 380px;
-    padding: 7px 17px;
+    padding: 7px 15px;
     margin: 0;
   }
   @media screen and (max-width: 480px) {
     width: 320px;
-    padding: 7px 17px;
+    padding: 7px 15px;
     margin: 0;
   }
 }
@@ -96,7 +102,7 @@
   }
   @media screen and (max-width: 480px) {
     width: 320px;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-left: 0;
   }
 }

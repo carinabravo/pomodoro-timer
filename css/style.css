@@ -134,10 +134,15 @@ ul {
     padding-left: 15px;
   }
 }
+@media screen and (max-width: 480px) {
+  .fas {
+    padding-left: 10px;
+  }
+}
 
 .circle {
-  width: 380px;
-  height: 380px;
+  width: 370px;
+  height: 370px;
   border-radius: 50%;
 }
 @media screen and (max-width: 768px) {
@@ -148,8 +153,8 @@ ul {
 }
 @media screen and (max-width: 480px) {
   .circle {
-    width: 280px;
-    height: 280px;
+    width: 300px;
+    height: 300px;
   }
 }
 
@@ -159,8 +164,12 @@ ul {
   border-radius: 50%;
 }
 
+.menssage {
+  padding: 35px 0 0 0;
+}
+
 .controls {
-  padding: 50px 0 40px 0;
+  padding: 30px 0 40px 0;
 }
 
 .button-work,
@@ -182,7 +191,7 @@ ul {
   .button-pause {
     width: 380px;
     margin: 0;
-    margin-bottom: 15px;
+    margin-bottom: 17px;
   }
 }
 @media screen and (max-width: 480px) {
@@ -209,14 +218,14 @@ ul {
 @media screen and (max-width: 768px) {
   .taskInput {
     width: 380px;
-    padding: 7px 17px;
+    padding: 7px 15px;
     margin: 0;
   }
 }
 @media screen and (max-width: 480px) {
   .taskInput {
     width: 320px;
-    padding: 7px 17px;
+    padding: 7px 15px;
     margin: 0;
   }
 }
@@ -238,7 +247,7 @@ ul {
 @media screen and (max-width: 480px) {
   .text1 {
     width: 320px;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-left: 0;
   }
 }
@@ -333,7 +342,7 @@ body {
 }
 @media screen and (max-width: 768px) {
   .title {
-    font-size: 47px;
+    font-size: 45px;
   }
 }
 @media screen and (max-width: 480px) {
@@ -357,6 +366,21 @@ body {
   }
 }
 
+.menssage {
+  font-family: "Kalam", cursive;
+  font-size: 25px;
+}
+@media screen and (max-width: 768px) {
+  .menssage {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .menssage {
+    font-size: 22px;
+  }
+}
+
 .button-work,
 .button-stop,
 .button-short,
@@ -373,7 +397,7 @@ body {
 
 .taskInput {
   font-family: "Kalam", cursive;
-  font-size: 18px;
+  font-size: 19px;
 }
 
 .text1 {
@@ -388,7 +412,7 @@ body {
 
 li {
   font-family: "Kalam", cursive;
-  font-size: 18px;
+  font-size: 19px;
 }
 
 .eliminar {
@@ -425,7 +449,7 @@ body {
 }
 
 .circle {
-  box-shadow: 0px 0px 30px #8c80f6;
+  box-shadow: 0px 0px 20px #8c80f6;
 }
 
 .circle::before {
@@ -447,11 +471,11 @@ body {
 .button-short:hover,
 .button-long:hover,
 .button-pause:hover {
-  box-shadow: 0px 2px 9px #8c80f6;
+  box-shadow: 0px 2px 7px #8c80f6;
 }
 
 .button:hover {
-  box-shadow: 0px 2px 9px #bd7cfe;
+  box-shadow: 0px 2px 7px #bd7cfe;
 }
 
 .taskInput {
@@ -461,7 +485,7 @@ body {
 
 .taskInput:focus {
   border: 2px solid #bd7cfe;
-  box-shadow: 0px 2px 9px #8c80f6;
+  box-shadow: 0px 2px 7px #8c80f6;
   background-color: #eef1ff;
 }
 
@@ -491,7 +515,7 @@ body {
 
 /*** Animaciones del sitio ***/
 .circle {
-  background: linear-gradient(50deg, #7c6ef6 25%, #3dc1f6 38%, #ae4efd 45%, #3dc1f6 57%, #7c6ef6 75%, #ae4efd 100%);
+  background: linear-gradient(45deg, #7c6ef6 25%, #3dc1f6 40%, #ae4efd 50%, #3dc1f6 57%, #7c6ef6 75%, #ae4efd 100%);
   background-size: 400% 400%;
   animation: animate 5s ease-in-out infinite;
 }

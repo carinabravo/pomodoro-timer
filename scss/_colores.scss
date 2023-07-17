@@ -15,7 +15,7 @@ body {
 }
 
 .circle {
-  box-shadow: 0px 0px 30px $baseTerciaria-color;
+  box-shadow: 0px 0px 20px $baseTerciaria-color;
 }
 
 .circle::before {
@@ -37,11 +37,11 @@ body {
 .button-short:hover,
 .button-long:hover,
 .button-pause:hover {
-  box-shadow: 0px 2px 9px $baseTerciaria-color;
+  box-shadow: 0px 2px 7px $baseTerciaria-color;
 }
 
 .button:hover {
-  box-shadow: 0px 2px 9px $baseCuaternaria-color;
+  box-shadow: 0px 2px 7px $baseCuaternaria-color;
 }
 
 .taskInput {
@@ -51,7 +51,7 @@ body {
 
 .taskInput:focus {
   border: 2px solid $baseCuaternaria-color;
-  box-shadow: 0px 2px 9px $baseTerciaria-color;
+  box-shadow: 0px 2px 7px $baseTerciaria-color;
   background-color: $baseSecundaria-color;
 }
 
