@@ -1,135 +1,266 @@
 // Variables
-let workTime = 25;
-let breakTime = 5;
-let seconds = 0;
-let taskList = [];
 
-// Función para iniciar el temporizador
-let timerInterval;
+const ESPERA = "ESPERA";
+const FUNCIONANDO = "FUNCIONANDO";
+const DETENIDO = "DETENIDO";
+const DESCANSO_CORTO = "DESCANSO_CORTO";
+const DESCANSO_LARGO = "DESCANSO_LARGO";
 
-function start() {
-  // Ocultar botón de inicio y mostrar botón de reinicio
-  document.getElementById("start").style.display = "none";
-  document.getElementById("reset").style.display = "block";
+const STATES = {
+  ESPERA,
+  FUNCIONANDO,
+  DETENIDO,
+  DESCANSO_CORTO,
+  DESCANSO_LARGO,
+};
 
-  let workMinutes = workTime;
-  let breakMinutes = breakTime;
-  let breakCount = 0;
+let state = ESPERA;
 
-  // Función que se ejecuta cada segundo para actualizar el temporizador
-  let timerFunction = () => {
-    document.getElementById("minutes").innerHTML = `${workMinutes}`.padStart(
-      2,
-      "0"
-    ); //agrega 2 ceros a los minutos
-    document.getElementById("seconds").innerHTML = `${seconds}`.padStart(
-      2,
-      "0"
-    ); //agrega 2 ceros a los segundos
+let pomodoroTimer = {
+  started: false, // Variable para almacenar el estado del temporizador (iniciado o detenido)
+  minutes: 0, // Variable para almacenar los minutos restantes del temporizador
+  seconds: 0, // Variable para almacenar los segundos restantes del temporizador
+  fillerHeight: 0, // Variable para almacenar la altura del indicador de progreso
+  fillerIncrement: 0, // Variable para almacenar el incremento de altura del indicador de progreso
+  interval: null, // Variable para almacenar el identificador del intervalo de tiempo
+  minutesDom: null, // Elemento del DOM que muestra los minutos restantes
+  secondsDom: null, // Elemento del DOM que muestra los segundos restantes
+  fillerDom: null, // Elemento del DOM que muestra el indicador de progreso
 
-    if (workMinutes === 0 && seconds === 0) {
-      if (breakCount % 2 === 0) {
-        // Inicia el descanso
-        workMinutes = breakMinutes;
-        breakCount++;
-        document.getElementById("text").textContent = "¡Start break!";
-        setTimeout(() => {
-          document.getElementById("text").textContent = ""; // Elimina el contenido de "text" después de 3 segundos
-        }, 2000);
-      } else {
-        // Continúa con el trabajo
-        workMinutes = workTime;
-        breakCount++;
-        document.getElementById("start").style.display = "block";
-        document.getElementById("reset").style.display = "none";
-        if (breakCount % 2 === 0) {
-          // Detiene el temporizador al finalizar el break
-          clearInterval(timerInterval);
-          document.getElementById("text").textContent = "¡End break!";
-          setTimeout(() => {
-            document.getElementById("text").textContent = ""; // Elimina el contenido de "text" después de 2 segundos
-          }, 2000);
-          return;
-        }
+  init: function (onTimerComplete) {
+    // Inicializa el temporizador
+    let self = this;
+    this.minutesDom = document.querySelector("#minutes");
+    this.secondsDom = document.querySelector("#seconds");
+    this.fillerDom = document.querySelector("#filler");
+    this.onTimerComplete = onTimerComplete;
+
+    this.interval = setInterval(function () {
+      // Configura los controladores de eventos para los botones de inicio y parada
+      self.intervalCallback.apply(self);
+    }, 1000);
+  },
+
+  pauseOrResumeTimer: function () {
+    // Pausa o reanuda el temporizador
+    this.started = !this.started; // Cambia el estado del temporizador (pausado o reanudado)
+    this.updateDom(); // Actualiza los elementos del DOM
+  },
+
+  resetVariables: function (mins, secs, started) {
+    // Restablece las variables del temporizador a los valores especificados
+    this.minutes = mins;
+    this.seconds = secs;
+    this.started = started;
+    this.fillerIncrement = 200 / (this.minutes * 60);
+    this.fillerHeight = 0;
+  },
+
+  startWork: function () {
+    // Inicia el temporizador de trabajo (25 minutos)
+    this.resetVariables(25, 0, true);
+    this.updateDom();
+  },
+
+  startShortBreak: function () {
+    // Inicia el temporizador de pausa corta (5 minutos)
+    this.resetVariables(5, 0, true);
+    this.updateDom();
+  },
+
+  startLongBreak: function () {
+    // Inicia el temporizador de pausa larga (15 minutos)
+    this.resetVariables(15, 0, true);
+    this.updateDom();
+  },
+
+  stopTimer: function () {
+    // Detiene el temporizador y restablece los valores iniciales
+    this.resetVariables(25, 0, false);
+    this.updateDom();
+  },
+
+  toDoubleDigit: function (num) {
+    // Convierte un número en una cadena de dos dígitos
+    if (num < 10) {
+      return "0" + parseInt(num, 10);
+    }
+    return num;
+  },
+
+  updateDom: function () {
+    // Actualiza los elementos del DOM para mostrar el tiempo restante y el indicador de progreso
+    this.minutesDom.innerHTML = this.toDoubleDigit(this.minutes);
+    this.secondsDom.innerHTML = this.toDoubleDigit(this.seconds);
+    this.fillerHeight = this.fillerHeight + this.fillerIncrement;
+  },
+
+  intervalCallback: function () {
+    // Callback que se ejecuta en cada intervalo de tiempo (cada segundo)
+    if (!this.started) return false;
+    if (this.seconds == 0) {
+      if (this.minutes == 0) {
+        this.timerComplete();
+        return;
       }
-    }
-    if (seconds === 0) {
-      seconds = 59;
-      workMinutes--;
+      this.seconds = 59;
+      this.minutes--;
     } else {
-      seconds--;
+      this.seconds--;
     }
-  };
+    this.updateDom();
+  },
 
-  // Inicia el temporizador
-  timerInterval = setInterval(timerFunction, 1000); // 1000 = 1 segundo
-}
+  timerComplete: function () {
+    // Acciones a realizar cuando el temporizador ha finalizado
+    this.started = false;
+    this.fillerHeight = 0;
 
-// Función para reiniciar el temporizador
-function resetTimer() {
-  // Detiene el temporizador actual
-  clearInterval(timerInterval);
+    this.onTimerComplete();
+  },
+};
 
-  seconds = 0;
-  document.getElementById("minutes").innerHTML = workTime;
-  document.getElementById("seconds").innerHTML = "00";
+//función del estado de la reprodución de la música
+const musicPlayer = {
+  play: function () {
+    //música encendida
+    const sonido = document.createElement("audio");
+    sonido.setAttribute(
+      "src",
+      "./sound/musica-para-pensar-musica-relajante-para-estudiar-musica-para-reflexionar-pe_LXQLr7OQ.mp3"
+    );
+    sonido.setAttribute("autoplay", "true");
+    document.body.appendChild(sonido);
+  },
 
-  // Muestra el botón de inicio y oculta el botón de reinicio
-  document.getElementById("start").style.display = "block";
-  document.getElementById("reset").style.display = "none";
-}
+  stop: function () {
+    //música apagada
+    const audioElements = document.getElementsByTagName("audio");
 
-// Función para agregar una tarea a la lista
-function addTask() {
-  const taskInput = document.getElementById("taskInput");
-  const task = taskInput.value.trim();
-
-  if (task !== "") {
-    taskList.push(task);
-    renderTaskList();
-    taskInput.value = "";
-  }
-}
-
-// Función para eliminar una tarea de la lista
-function deleteTask(index) {
-  taskList.splice(index, 1);
-  renderTaskList();
-}
-
-// Función para renderizar la lista de tareas
-function renderTaskList() {
-  const taskListElement = document.getElementById("taskList");
-  taskListElement.innerHTML = "";
-
-  taskList.forEach((task, index) => {
-    const listItem = document.createElement("li");
-    listItem.innerHTML = `<button id="eliminar" class="button texto-medio eliminar" onclick="deleteTask(${index})">Delete task</button>${task}`;
-    taskListElement.appendChild(listItem);
-  });
-}
+    if (audioElements.length > 0) {
+      audioElements[0].parentNode.removeChild(audioElements[0]);
+    }
+  },
+};
 
 // Función para reproducir audio
-window.addEventListener("load", function () {
-  document.getElementById("start").addEventListener("click", sonar);
-  document.getElementById("reset").addEventListener("click", callar);
-});
+function start() {
+  if (state != ESPERA) {
+    // si state no es espera
+    return;
+  }
 
-function sonar() {
-  const sonido = document.createElement("iframe");
-  sonido.setAttribute(
-    "src",
-    "./sound/musica-para-pensar-musica-relajante-para-estudiar-musica-para-reflexionar-pe_LXQLr7OQ.mp3"
-  );
-  document.body.appendChild(sonido);
-  document.getElementById("start").removeEventListener("click", sonar);
+  state = FUNCIONANDO; //asigno el valor funcionando en state
+
+  musicPlayer.play();
+  pomodoroTimer.startWork();
 }
 
-function callar() {
-  const iframe = document.getElementsByTagName("iframe");
+//Función para pausar audio
+function pausar() {
+  // cambio de estado
+  if (state == FUNCIONANDO || state == DETENIDO) {
+    // si state es igual a funcionando o state es igual a detenido
+    if (state == FUNCIONANDO) {
+      state = DETENIDO; //asigno el valor detenido en state
+    } else if (state == DETENIDO) {
+      state = FUNCIONANDO; //asigno el valor funcionando en state
+    }
+  } else {
+    return;
+  }
 
-  if (iframe.length > 0) {
-    iframe[0].parentNode.removeChild(iframe[0]);
-    document.getElementById("reset").addEventListener("click", callar);
+  if (state == FUNCIONANDO) {
+    // si state es igual a funcionando
+    pomodoroTimer.pauseOrResumeTimer();
+    musicPlayer.play();
+  } else if (state == DETENIDO) {
+    pomodoroTimer.pauseOrResumeTimer();
+    musicPlayer.stop();
   }
 }
+
+function shortBreak() {
+  if (state == FUNCIONANDO) {
+    state = DESCANSO_CORTO; //asigno el valor descanso_corto en state
+  } else {
+    return;
+  }
+
+  musicPlayer.stop();
+  pomodoroTimer.startShortBreak();
+}
+
+function longBreak() {
+  if (state == FUNCIONANDO) {
+    state = DESCANSO_LARGO; //asigno el valor descanso_largo en state
+  } else {
+    return;
+  }
+
+  musicPlayer.stop();
+  pomodoroTimer.startLongBreak();
+}
+
+function stop() {
+  if (state == FUNCIONANDO || state == DETENIDO) {
+    // si state es igual a funcionando o state es igual a detenido
+    state = ESPERA; //asigno el valor espera en state
+  } else {
+    return;
+  }
+
+  musicPlayer.stop();
+  pomodoroTimer.stopTimer();
+}
+
+const tasksManager = {
+  taskList: [],
+  init: function () {},
+  add: function () {
+    // Agrega una tarea a la lista de tareas°
+    const taskInput = document.getElementById("taskInput");
+    const task = taskInput.value.trim();
+
+    if (task !== "") {
+      this.taskList.push(task);
+      this.render();
+      taskInput.value = "";
+    }
+  },
+  delete: function (index) {
+    // Elimina una tarea de la lista de tareas según el índice proporcionado
+    this.taskList.splice(index, 1);
+    this.render();
+  },
+  render: function () {
+    // Renderiza la lista de tareas en el DOM
+    const taskListElement = document.getElementById("taskList");
+    taskListElement.innerHTML = "";
+
+    this.taskList.forEach((task, index) => {
+      const listItem = document.createElement("li");
+      listItem.innerHTML = `<button id="eliminar" class="button texto-medio eliminar" onclick="tasksManager.delete(${index})">Delete task</button>${task}`;
+      taskListElement.appendChild(listItem);
+    });
+  },
+};
+
+// Almacenar la lista de tareas en el almacenamiento local al salir de la página
+window.onbeforeunload = function () {
+  localStorage.setItem("taskList", JSON.stringify(tasksManager.taskList));
+};
+
+window.onload = function () {
+  const storedTasks = localStorage.getItem("taskList"); // Restaurar la lista de tareas guardada en el almacenamiento local
+  tasksManager.init();
+  if (storedTasks) {
+    tasksManager.taskList = JSON.parse(storedTasks);
+  }
+  tasksManager.render(); // Renderiza la lista de tareas al cargar la página
+
+  pomodoroTimer.init(() => musicPlayer.stop()); // Inicia el temporizador Pomodoro cuando la ventana se haya cargado completamente
+
+  musicPlayer.stop(); //la mósica no se reproduce al renderizar la página
+};
+  //debugger;
