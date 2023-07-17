@@ -17,21 +17,11 @@ body {
 }
 
 .title {
-  font-size: 50px;
+  font-size: 47px;
   @media screen and (max-width: 768px) {
     font-size: 47px;
   }
-  @media screen and (max-width: 400px) {
-    font-size: 40px;
-  }
-}
-
-.fas {
-  font-size: 50px;
-  @media screen and (max-width: 768px) {
-    font-size: 47px;
-  }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 480px) {
     font-size: 40px;
   }
 }
@@ -42,18 +32,23 @@ body {
   @media screen and (max-width: 768px) {
     font-size: 80px;
   }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 480px) {
     font-size: 75px;
   }
+}
+
+.button-work,
+.button-stop,
+.button-short,
+.button-long,
+.button-pause {
+  font-family: "Kalam", cursive;
+  font-size: 20px;
 }
 
 .text {
   font-family: "Kalam", cursive;
   font-size: 30px;
-}
-
-.fa-solid {
-  font-size: 55px;
 }
 
 .taskInput {
@@ -68,7 +63,7 @@ body {
 
 .title2 {
   font-family: "Varela Round", sans-serif;
-  font-size: 26px;
+  font-size: 25px;
 }
 
 li {
@@ -87,7 +82,7 @@ li {
   @media screen and (max-width: 768px) {
     font-size: 12px;
   }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 480px) {
     font-size: 10px;
   }
 }

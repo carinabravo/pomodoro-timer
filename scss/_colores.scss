@@ -22,21 +22,30 @@ body {
   background-color: $baseSecundaria-color;
 }
 
-.controls button {
-  background-color: $baseQuinaria-color;
+.button-work,
+.button-stop,
+.button-short,
+.button-long,
+.button-pause {
+  background-color: $baseTerciaria-color;
+  color: $baseSecundaria-color;
+  border: $baseQuinaria-color;
 }
 
-.fa-play,
-.scroll a {
-  color: $baseTerciaria-color;
+.button-work:hover,
+.button-stop:hover,
+.button-short:hover,
+.button-long:hover,
+.button-pause:hover {
+  box-shadow: 0px 2px 9px $baseTerciaria-color;
 }
 
-.fa-spin {
-  color: $baseCuaternaria-color;
+.button:hover {
+  box-shadow: 0px 2px 9px $baseCuaternaria-color;
 }
 
 .taskInput {
-  border-color: $baseTerciaria-color;
+  border-color: $baseCuaternaria-color;
   background-color: $baseQuinaria-color;
 }
 
@@ -58,14 +67,14 @@ body {
   border: $baseQuinaria-color;
 }
 
-.button:hover {
-  box-shadow: 0px 2px 9px $baseTerciaria-color;
-}
-
 .footer {
   background-color: $baseTerciaria-color;
 }
 
 .text2 {
   color: $baseSecundaria-color;
+}
+
+.scroll a {
+  color: $baseTerciaria-color;
 }

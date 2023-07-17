@@ -6,11 +6,11 @@
 }
 
 .title {
-  padding: 30px 0 35px 0;
+  padding: 30px 0 30px 0;
 }
 
 .fas {
-  padding-left: 13px;
+  padding-left: 15px;
   @media screen and (max-width: 768px) {
     padding-left: 15px;
   }
@@ -24,7 +24,7 @@
     width: 340px;
     height: 340px;
   }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 480px) {
     width: 280px;
     height: 280px;
   }
@@ -36,85 +36,114 @@
   border-radius: 50%;
 }
 
-.text {
-  padding-top: 35px;
-  padding-bottom: 30px;
-}
-
 .controls {
-  padding-bottom: 35px;
+  padding: 50px 0 40px 0;
 }
 
-.fa-play {
-  line-height: 1;
+.button-work,
+.button-stop,
+.button-short,
+.button-long,
+.button-pause {
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  padding: 7px 15px;
+  margin: 5px 9px 0 0;
+
+  @media screen and (max-width: 768px) {
+    width: 380px;
+    margin: 0;
+    margin-bottom: 15px;
+  }
+  @media screen and (max-width: 480px) {
+    width: 320px;
+  }
 }
 
-.fa-spin {
-  line-height: 1;
-}
-
-.tasks1 {
-  padding-top: 20px;
+.button-stop {
+  margin-right: 0;
 }
 
 .taskInput {
-  padding: 10px 20px;
-  width: 389px;
+  padding: 7px 15px;
+  width: 390px;
   height: auto;
-  border-radius: 15px;
+  border-radius: 10px;
   border-width: 2px;
   @media screen and (max-width: 768px) {
-    width: 260px;
+    width: 380px;
+    padding: 7px 17px;
+    margin: 0;
   }
-  @media screen and (max-width: 400px) {
-    padding: 8px 10px;
-    width: 220px;
+  @media screen and (max-width: 480px) {
+    width: 320px;
+    padding: 7px 17px;
+    margin: 0;
   }
 }
 
 .text1 {
   width: auto;
   height: auto;
-  border-radius: 15px;
-  padding: 10px 20px;
+  border-radius: 10px;
+  padding: 7px 15px;
   margin-left: 5px;
-  @media screen and (max-width: 400px) {
-    padding: 8px 15px;
+  @media screen and (max-width: 768px) {
+    width: 380px;
+    margin-top: 15px;
+    margin-left: 0;
+  }
+  @media screen and (max-width: 480px) {
+    width: 320px;
+    margin-top: 10px;
+    margin-left: 0;
+  }
+}
+
+.tasks-button {
+  @media screen and (max-width: 768px) {
+    margin: 0;
+  }
+  @media screen and (max-width: 480px) {
   }
 }
 
 .title2 {
-  padding: 35px 0 5px 5px;
+  padding: 35px 0 0 5px;
   @media screen and (max-width: 768px) {
-    padding: 35px 0 5px 15px;
+    padding: 40px 0 0 10px;
+  }
+  @media screen and (max-width: 480px) {
+    padding: 40px 0 0 5px;
   }
 }
 
 ul {
   width: 515px;
-  padding: 10px 7px 20px 7px;
+  padding: 10px 7px 20px 6px;
   @media screen and (max-width: 768px) {
     width: 400px;
     padding: 10px 5px 20px 0;
   }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 480px) {
     width: 329px;
   }
 }
 
 li {
-  padding: 5px 0;
+  padding: 2px 0;
   @media screen and (max-width: 768px) {
-    padding: 5px 16px;
+    padding: 2px 3px;
   }
 }
 
 .eliminar {
   width: auto;
   height: auto;
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 7px 18px;
-  margin: 5px 12px 10px 0;
+  margin: 3px 8px 10px 0;
 }
 
 .footer {

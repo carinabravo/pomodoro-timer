@@ -50,13 +50,23 @@ body {
   align-items: $alignItem-primario;
 }
 
-.controls button {
-  border: none;
-  cursor: pointer;
+.controls {
+  display: flex;
+  flex-direction: $flexDirection-primario;
+  align-items: $alignItem-primario;
+  @media screen and (max-width: 768px) {
+    flex-direction: $flexDirection-secundario;
+    justify-content: $justifyContent-primario;
+  }
 }
 
-.controls #reset {
-  display: $display-secundario;
+.button-work,
+.button-stop,
+.button-short,
+.button-long,
+.button-pause,
+.button {
+  cursor: pointer;
 }
 
 iframe {
@@ -70,6 +80,15 @@ iframe {
   align-items: $alignItem-primario;
 }
 
+.tasks-button {
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: $flexDirection-secundario;
+    align-items: $alignItem-primario;
+    justify-content: $justifyContent-primario;
+  }
+}
+
 .taskInput:focus {
   outline: none;
 }
@@ -79,20 +98,16 @@ ul {
   text-align: $textAlign-secundario;
 }
 
-.button {
-  cursor: pointer;
-}
-
 .text2 {
   text-align: $alignItem-primario;
+}
+
+.float {
+  position: fixed;
 }
 
 .scroll a {
   @media screen and (max-width: 768px) {
     display: none;
   }
-}
-
-.float {
-  position: fixed;
 }
