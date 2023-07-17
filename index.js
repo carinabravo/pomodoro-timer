@@ -1,10 +1,10 @@
 // Variables
 
-const ESPERA = "ESPERA";
-const FUNCIONANDO = "FUNCIONANDO";
-const DETENIDO = "DETENIDO";
-const DESCANSO_CORTO = "DESCANSO_CORTO";
-const DESCANSO_LARGO = "DESCANSO_LARGO";
+const ESPERA = "ESPERA"; //stop
+const FUNCIONANDO = "FUNCIONANDO"; //work
+const DETENIDO = "DETENIDO"; //pause
+const DESCANSO_CORTO = "DESCANSO_CORTO"; //short-break
+const DESCANSO_LARGO = "DESCANSO_LARGO"; // long-break
 
 const STATES = {
   ESPERA,
@@ -203,9 +203,14 @@ function longBreak() {
 }
 
 function stop() {
-  if (state == FUNCIONANDO || state == DETENIDO) {
-    // si state es igual a funcionando o state es igual a detenido
-    state = ESPERA; //asigno el valor espera en state
+  if (
+    state == FUNCIONANDO ||
+    state == DETENIDO ||
+    state == DESCANSO_CORTO ||
+    DESCANSO_LARGO
+  ) {
+    // si state es igual a funcionando o es igual a detenido o uno de los dos break
+    state = ESPERA; //asigno el valor espera en state (estop)
   } else {
     return;
   }
@@ -263,4 +268,4 @@ window.onload = function () {
 
   musicPlayer.stop(); //la mósica no se reproduce al renderizar la página
 };
-  //debugger;
+//debugger;
