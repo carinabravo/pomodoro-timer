@@ -1,4 +1,4 @@
-# Pomodoro
-## Description
+# Pomodoro Timer
+### Description
 
-## development
+### Development
