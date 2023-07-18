@@ -282,6 +282,13 @@ const tasksManager = {
       listItem.innerHTML = `<button id="eliminar" class="button texto-medio eliminar" onclick="tasksManager.delete(${index})">Delete task</button>${task}`;
       taskListElement.appendChild(listItem);
     });
+
+    const myTasksTitle = document.getElementById("myTasksTitle");
+    if (this.taskList.length > 0) {
+      myTasksTitle.style.display = "block"; // Si hay tareas en la lista, muestra el título
+    } else {
+      myTasksTitle.style.display = "none"; // Si no hay tareas en la lista, oculta el título
+    }
   },
 };
 
