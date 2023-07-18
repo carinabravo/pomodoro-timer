@@ -12,11 +12,8 @@ $fuentes: (
   }
 }
 
-body {
-  font-family: "Varela Round", sans-serif;
-}
-
 .title {
+  font-family: "Varela Round", sans-serif;
   font-size: 47px;
   @media screen and (max-width: 768px) {
     font-size: 45px;

@@ -234,12 +234,14 @@ ul {
   border-radius: 10px;
   padding: 7px 15px;
   margin-left: 5px;
+  margin-bottom: 5px;
 }
 @media screen and (max-width: 768px) {
   .text1 {
     width: 380px;
     margin-top: 15px;
     margin-left: 0;
+    margin-bottom: 10px;
   }
 }
 @media screen and (max-width: 480px) {
@@ -255,27 +257,42 @@ ul {
 }
 
 .title2 {
-  padding: 35px 0 0 5px;
+  padding-top: 25px;
+  padding-left: 7px;
 }
 @media screen and (max-width: 768px) {
   .title2 {
-    padding: 40px 0 0 10px;
+    padding-left: 11px;
   }
 }
 @media screen and (max-width: 480px) {
   .title2 {
-    padding: 40px 0 0 5px;
+    padding-left: 6px;
+  }
+}
+
+.fa-solid {
+  padding-left: 6px;
+}
+@media screen and (max-width: 768px) {
+  .fa-solid {
+    padding-left: 6px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .fa-solid {
+    padding-left: 6px;
   }
 }
 
 ul {
   width: 515px;
-  padding: 10px 7px 20px 6px;
+  padding: 15px 7px 28px 6px;
 }
 @media screen and (max-width: 768px) {
   ul {
     width: 400px;
-    padding: 10px 5px 20px 0;
+    padding: 15px 5px 28px 0;
   }
 }
 @media screen and (max-width: 480px) {
@@ -289,7 +306,7 @@ li {
 }
 @media screen and (max-width: 768px) {
   li {
-    padding: 2px 3px;
+    padding: 2px 4px;
   }
 }
 
@@ -297,17 +314,17 @@ li {
   width: auto;
   height: auto;
   border-radius: 10px;
-  padding: 7px 18px;
+  padding: 6px 18px;
   margin: 3px 8px 10px 0;
 }
 @media screen and (max-width: 768px) {
   .eliminar {
-    margin: 3px 8px 10px 7px;
+    margin: 3px 8px 10px 5px;
   }
 }
 @media screen and (max-width: 480px) {
   .eliminar {
-    margin: 3px 8px 10px 3px;
+    margin: 3px 8px 10px 1px;
   }
 }
 
@@ -318,7 +335,7 @@ li {
 
 .float {
   right: 20px;
-  bottom: 80px;
+  bottom: 86px;
 }
 @media screen and (max-width: 768px) {
   .float {
@@ -340,11 +357,8 @@ li {
   font-weight: lighter;
 }
 
-body {
-  font-family: "Varela Round", sans-serif;
-}
-
 .title {
+  font-family: "Varela Round", sans-serif;
   font-size: 47px;
 }
 @media screen and (max-width: 768px) {
@@ -500,6 +514,10 @@ body {
   color: #eef1ff;
   background-color: #bd7cfe;
   border: transparent;
+}
+
+.fa-solid {
+  color: #bd7cfe;
 }
 
 .eliminar {
