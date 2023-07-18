@@ -38,7 +38,7 @@ let pomodoroTimer = {
     this.interval = setInterval(function () {
       // Configura los controladores de eventos para los botones de inicio y parada
       self.intervalCallback.apply(self);
-    }, 1000);
+    }, 10);
   },
 
   pauseOrResumeTimer: function () {
@@ -117,8 +117,42 @@ let pomodoroTimer = {
     this.fillerHeight = 0;
 
     this.onTimerComplete();
+
+    const messageContainer = document.getElementById("messageContainer");
+
+    switch (state) {
+      case FUNCIONANDO:
+        showMessage("Take a break!");
+        setTimeout(() => {
+          messageContainer.innerHTML = ""; // Elimina el mensaje después de 3 segundos
+          this.onTimerComplete();
+        }, 4000); // Espera 3 segundos antes de continuar al siguiente estado
+        break;
+      case DESCANSO_CORTO:
+        showMessage("End of your short break!");
+        setTimeout(() => {
+          messageContainer.innerHTML = ""; // Elimina el mensaje después de 3 segundos
+          this.onTimerComplete();
+        }, 4000); // Espera 3 segundos antes de continuar al siguiente estado
+        break;
+      case DESCANSO_LARGO:
+        showMessage("End of your long break!");
+        setTimeout(() => {
+          messageContainer.innerHTML = ""; // Elimina el mensaje después de 3 segundos
+          this.onTimerComplete();
+        }, 4000); // Espera 3 segundos antes de continuar al siguiente estado
+        break;
+      default:
+        this.onTimerComplete();
+    }
   },
 };
+
+function showMessage(message) {
+  // Muestra el mensaje en el DOM
+  const messageContainer = document.getElementById("messageContainer");
+  messageContainer.innerHTML = `<div class="notification">${message}</div>`;
+}
 
 //función del estado de la reprodución de la música
 const musicPlayer = {
