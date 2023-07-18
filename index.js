@@ -38,7 +38,7 @@ let pomodoroTimer = {
     this.interval = setInterval(function () {
       // Configura los controladores de eventos para los botones de inicio y parada
       self.intervalCallback.apply(self);
-    }, 10);
+    }, 1000);
   },
 
   pauseOrResumeTimer: function () {
